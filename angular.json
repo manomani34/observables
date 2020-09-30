@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "observable-pro"
+    }
+  },
+  "defaultProject": "observable-pro",
+  "cli": {
+    "analytics": false
+  }
 }
