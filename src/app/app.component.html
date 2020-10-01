@@ -1,4 +1,4 @@
 <a [routerLink]="['/']"> home</a>
-<a [routerLink]="['/user' , 1]"> user 1</a>
-<a [routerLink]="['/user' , 2]"> user 2</a>
+<a [routerLink]="['/user' , 1]"> user 1 {{ user1Activated ? '(activated)' : '' }}</a>
+<a [routerLink]="['/user' , 2]"> user 2 {{ user2Activated ? '(activated)' : '' }}</a>
 <router-outlet></router-outlet>

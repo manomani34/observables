@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-user',
@@ -12,7 +13,7 @@ export class UserComponent implements OnInit, OnDestroy {
   userId;
   subscription: Subscription;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private userService: UserService) { }
 
 
   ngOnInit(): void {
@@ -21,6 +22,10 @@ export class UserComponent implements OnInit, OnDestroy {
         this.userId = params['id'];
       }
     )
+  }
+
+  onActivated(){
+    this.userService.userActivated.next(this.userId)
   }
 
 
